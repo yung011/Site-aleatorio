@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Qual deus de league of legends você seria</h1>
+
+    <div id="questionario">
+        <div class="perguntas1">
+            <div>
+            <h1>qual é o seu animal favorito</h1>
+            </div>
+
+            <div>
+            <label for=""><input type="radio" name="p1" class="pergunta" value="volibear">urso</label>
+            <label for=""><input type="radio" name="p1" class="pergunta" value="ornn">cabra</label>
+            <label for=""><input type="radio" name="p1" class="pergunta" value="anivia">passaro</label>
+            <label for=""><input type="radio" name="p1" class="pergunta" value="renekton">crocodilo</label>
+        </div>
+
+        </div>
+        <div class="perguntas2">
+            <div>
+            <h1>qual é seu elemento favorito</h1>
+            </div>
+            <div>
+            <label for=""><input type="radio" name="p2" class="pergunta" value="volibear">raio</label>
+            <label for=""><input type="radio" name="p2" class="pergunta" value="ornn">fogo</label>
+            <label for=""><input type="radio" name="p2" class="pergunta" value="anivia">gelo</label>
+            <label for=""><input type="radio" name="p2" class="pergunta" value="renekton">areia</label>
+        </div>
+        </div>
+        <div class="perguntas3">
+            <div>
+            <h1>qual é o sua cidade favorita</h1>
+        </div>
+        <div>
+            <label for=""><input type="radio" name="p3" class="pergunta" value="volibear">freijord</label>
+            <label for=""><input type="radio" name="p3" class="pergunta" value="ornn">Damacia</label>
+            <label for=""><input type="radio" name="p3" class="pergunta" value="anivia">Noxus</label>
+            <label for=""><input type="radio" name="p3" class="pergunta" value="renekton">Shurima</label>
+        </div>
+        </div>
+        <div class="perguntas4">
+            <div>
+            <h1>de qual comida você gosta</h1>
+        </div>
+        <div>
+            <label for=""><input type="radio" name="p4" class="pergunta" value="volibear">Cookie</label>
+            <label for=""><input type="radio" name="p4" class="pergunta" value="ornn">Bombom</label>
+            <label for=""><input type="radio" name="p4" class="pergunta" value="anivia">chocolate</label>
+            <label for=""><input type="radio" name="p4" class="pergunta" value="renekton">Bala</label>
+        </div>
+        </div>
+    </div>
+    <hr>
+    <h1 id="resultado">RESULTADO</h1>
+    <button onclick="questionario()">Resultado</button>
+    <h1 id="porcvoli"></h1>
+    <h1 id="porcornn"></h1>
+    <h1 id="porcanivia"></h1>
+    <h1 id="porcrenekton"></h1>
+</body>
+<script>
+    function questionario(){
+        let volibear = 0;
+        let ornn = 0;
+        let anivia = 0;
+        let renekton = 0;
+
+        let radius = document.getElementsByClassName('pergunta')
+        for (let i = 0; i < radius.length; i++){
+            if (radius[i].checked) {
+                if(radius[i].value === "volibear"){
+                    volibear++;
+                } else if(radius[i].value === "ornn"){
+                    ornn++;
+                }else if(radius[i].value === "anivia"){
+                    anivia++;
+                }else if (radius[i].value === "renekton"){
+                    renekton++;
+                }
+            }
+        } 
+         //mostrando o resultado
+         document.getElementById('porcvoli').innerHTML = 'Volibear: ' + volibear;   
+         document.getElementById('porcornn').innerHTML =  'Ornn: ' + ornn;   
+         document.getElementById('porcanivia').innerHTML = 'Anivia: ' + anivia;   
+         document.getElementById('porcrenekton').innerHTML = 'Renekton: ' + renekton;   
+
+         if(volibear > ornn, anivia, renekton){
+            volibear.getElementById("porcvoli").innerHTML = 'Você é o: ' + volibear;
+         }else if (ornn> volibear,anivia,renekton){
+            ornn.getElementById('porcornn').innerHTML = 'Você é o: ' + ornn;
+         }else if (anivia> volibear,ornn,renekton){
+            ornn.getElementById('porcanivia').innerHTML = 'Você é a: ' + anivia;
+         }else if (renekton> volibear,anivia,ornn){
+            ornn.getElementById('porcrenekton').innerHTML = 'Você é o: ' + renekton;
+         }
+    }
+</script>
+</html>
